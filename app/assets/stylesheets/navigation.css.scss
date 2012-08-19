@@ -1,0 +1,48 @@
+$light_orange: #ff8812;
+$dark_orange: #f37703;
+$hover_color: #09f;
+
+#navigation {
+  margin-top:2em;
+  text-align:center;
+  width:961px;
+  height:50px;
+  a {
+    -webkit-transition: all .1s linear;
+    letter-spacing: 1px;
+    border:         1px solid transparent;
+    font-family:    "PTSansBold";
+    text-align:     center;
+    font-size:      18px;
+    padding:        .7em 3em;
+    color:          #666;
+    .pictos {
+      color:#bbb;
+    }
+    &:hover {
+      background:   #d9d9d9;
+      color:        #222;
+      .pictos {
+        color:#888;
+      }
+    }
+    &.current {
+      background:   white;
+      color:        black;
+      .pictos {
+        color: #333;
+      }
+      &:hover {
+        color: #222;
+      }
+    }
+    &[href="/admin"] {
+      position:relative;
+      right:-27px;
+      color:            $dark_orange;
+      .pictos {
+        color:$dark_orange;
+      }
+    }
+  }
+}

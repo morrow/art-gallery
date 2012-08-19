@@ -1,0 +1,164 @@
+form {
+
+  label {
+    display:inline-block;
+    min-width:120px;
+    vertical-align:top;
+    margin-top:1em;
+    font-weight:bold;
+  }
+
+  input[type=file], input[type=text], input[type=date], input[type=email], textarea, select, a, img {
+    vertical-align:top;
+    display:inline-block;
+    border:1px solid #ccc;
+    padding:.5em 1em;
+    margin:.5em;
+  }
+
+  img {
+    padding:0px;
+    border:none;
+  }
+
+  .prefix {
+    margin:0.5em;
+    margin-right:0em;
+    display:inline-block;
+    color:#444;
+    padding:0.5em;
+    background:#eee;
+    border:1px solid #ddd;
+    border-right:none;
+    padding-right:3px;
+  }
+
+  .suffix {
+    margin-left:0em !important;
+    padding-left:0px !important;
+    border-left:none !important;
+  }
+
+  input[type=submit], .button {
+    padding:.5em 1em;
+    cursor:pointer;
+    font-size:1em;
+    margin:.5em;
+    font-size:110%;
+  }
+
+  input[type=submit] {
+    color:green;
+    font-weight:bold;
+  }
+
+  .button.cancel {
+    color:red;
+    font-weight:normal;
+  }
+
+  .submit {
+    text-align:center;
+    margin-top:20px;
+    padding-top:20px;
+    border-top:1px dotted #ccc;
+  }
+
+  input[type=text],input[type=date],input[type=email] {
+    width:500px;
+    resize:auto;
+  }
+
+  select {
+    width:300px;
+    background:#eee;
+    vertical-align:top;
+    &[multiple] {
+      background:white;
+      resize:auto;
+    }
+    font-size:18px;
+  }
+
+  textarea {
+    width:700px;
+    height:200px;
+  }
+
+  #image_preview {
+    margin-top:10px;
+    height:258px;
+    max-width:400px;
+    vertical-align:top;
+  }
+  a.image.new {
+    position: relative;
+    left: 120px;
+    top: -50px;
+    width: 267px;
+    text-align: center;
+    background: #EEE;
+  }
+}
+
+#admin {
+  .artist {
+    background:#eee;
+    padding:1em;
+    div {
+      &.label {
+        text-align:right;
+        padding-right:10px;
+        display:inline-block;
+        width:130px;
+        color:#555;
+        margin:.5em 0em;
+      }
+    }
+  }
+  .artist .image img {
+    height: 40px;
+    float: left;
+    margin-right: 15px;
+  }
+}
+
+#admin_navbar {
+  position:absolute;
+  top:0px;
+  left:0px;
+  right:0px;
+  height:auto;
+  padding:.5em .1em;
+  background:#FE6A15;
+  text-align:right;
+  h2 {
+    float:left;
+    color:#111;
+    margin-left:15px;
+    letter-spacing:.1em;
+  }
+  > *  {
+    display:inline-block;
+  }
+  a {
+    margin-top:3px;
+    margin-right:15px;
+    text-align:right;
+  }
+}
+
+.edit_artist {
+  div.image {
+    height:290px;
+  }
+  a.image.new {
+    left:150px !important;
+  }
+}
+
+#admin.exhibits .new.exhibit {
+  display:block;
+  border:3px dashed #ccc;
+  background:white;
+}

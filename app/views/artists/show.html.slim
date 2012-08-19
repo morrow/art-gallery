@@ -1,0 +1,9 @@
+h1
+  = link_to "/artists" do
+    .action.artists Artists 
+  = action_divider
+  = link_to @artist do
+    = @artist.name
+- if is_admin
+  = link_to "Edit #{@artist.name}'s information", edit_artist_path(@artist), :class => "edit button"
+= render @artist

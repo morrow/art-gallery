@@ -1,0 +1,42 @@
+= form_for @artist, :builder => FormHelper::FormBuilder do |f|
+  .name
+    = f.label :name, "Name: "
+    = f.text_field :name
+  .image
+    = f.label :image, "Profile Image: "
+    = f.grouped_collection_select(:image_id, @categories, :images, :display_name, :id, :name, { :selected => (@artist.image.id if @artist.image)},{ :size => @images.length, :style => "height:210px;", "data-images-json" => @images_json})
+    = default_image_tag(@artist.image, :id => :image_preview)
+    br
+    = link_to  images_path, :class => "new image" do
+      span.pictos y 
+      | Manage Images
+  .media
+    = f.label :media, "Media: "
+    = f.text_area :media, :style => "height:100px;"
+  .short_description
+    = f.label :short_description, "Short Description: "
+    = f.text_area :short_description
+  .biography
+    = f.label :biography, "Biography: "
+    = f.text_area :biography
+  .email
+    = f.label :email, "Email Address: "
+    = f.email_field :email
+  .phone
+    = f.label :phone, "Phone Number: "
+    = f.text_field :phone
+  .website
+    = f.label :website, "Website URL: "
+    .prefix https://www.
+    = f.text_field :website, :class => :suffix, :style => "width:415px;"
+  .facebook
+    = f.label :facebook, "Facebook URL: "
+    .prefix https://www.facebook.com/
+    = f.text_field :facebook, :class => :suffix, :style => "width:314px;"
+  .twitter
+    = f.label :twitter, "Twitter URL: "
+    .prefix https://www.twitter.com/
+    = f.text_field :twitter, :class => :suffix, :style => "width:334px;"
+  .submit
+    = f.submit
+    = f.cancel

@@ -1,0 +1,11 @@
+.images
+  .new_header
+    h1 Editing Images 
+    = new_button :image
+  - @categories.each do |category|
+    h2.category= category.name.capitalize
+    - images = Image.where(:category_id => category.id)
+    - if images.length < 1
+      p(style="margin-left:1.5em;") - No Images for this category.
+    - else
+      = render images

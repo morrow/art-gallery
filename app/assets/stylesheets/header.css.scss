@@ -1,0 +1,52 @@
+#header {
+  > * {
+    display:inline-block;
+    width:49%;
+    height:110px;
+    &:last-child {
+      text-align:right;
+    }
+  }
+  #logo {
+    img {
+      float:left;
+      height:115px;
+      margin-right:1em;
+      margin-top:-10px;
+    }
+    div {
+      font-size:31px;
+      font-family:PTSansBold;
+      span {
+        &:first-child {
+          font-size:28px;
+        }
+      }
+    }
+    a {
+      &:hover {
+       color:#555;
+      }
+      letter-spacing: 1px;
+      margin-left:    0.5em;
+      font-weight:    bold;
+      font-size:      25px;
+      color:          #111;
+      width:          350px;
+    }
+  }
+  #info {
+    font-family: "PTSansNarrowRegular";
+    font-size:20px;
+    color:#666;
+    vertical-align:top;
+    text-align:right;
+    a {
+      opacity:  0.8;
+      display:inline-block;
+      &:hover {
+        opacity:10;
+      }
+    }
+  }
+}

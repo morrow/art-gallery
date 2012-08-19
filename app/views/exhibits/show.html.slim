@@ -1,0 +1,6 @@
+#exhibit
+  h1
+    .action.exhibits= link_to "Exhibits", "/exhibits"
+    = action_divider
+    = link_to @exhibit.name, @exhibit
+  = render @exhibit

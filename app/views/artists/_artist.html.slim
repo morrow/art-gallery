@@ -1,0 +1,31 @@
+#artist
+  .image
+    = link_to artist do 
+      = default_image_tag artist.image
+  .artist_data
+    .media
+      span.label Media: 
+      = artist.media
+    - if artist.website != ''
+      .website
+        span.label Website: 
+        = link_to artist.website, "http://#{artist.website}"
+    - if artist.email != ''
+      .email
+        span.label E-mail: 
+        = mail_to artist.email
+    - if artist.facebook != ''
+      .facebook
+        span.label Facebook: 
+        = link_to artist.facebook
+    - if artist.twitter != ''
+      .twitter
+        span.label Twitter: 
+        = link_to artist.twitter
+    - if artist.phone != ''
+      .phone
+        span.label Phone: 
+        = artist.phone
+  br
+  .biography.text
+    == process_text(artist.biography)

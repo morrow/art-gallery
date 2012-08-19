@@ -1,0 +1,17 @@
+#admin
+  h1 
+    | Editing 
+    .action.visit Visit 
+  = form_for @visit, :url => "/admin/visit", :builder => FormHelper::FormBuilder do |f|
+    .field
+      = f.label :address, "Address: "
+      = f.text_field :address
+    .field
+      = f.label :days, "Days: "
+      = f.text_field :days
+    .field
+      = f.label :hours, "Hours: "
+      = f.text_field :hours
+    .submit
+      = f.submit
+      = f.cancel

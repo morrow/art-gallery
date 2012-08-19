@@ -1,0 +1,21 @@
+#admin
+  h1 
+    | Editing 
+    .action.home Home 
+  = form_for @home, :url => "/home", :builder => FormHelper::FormBuilder do |f|
+    .field
+      = f.label :title, "Title: "
+      = f.text_field :title
+    .field
+      = f.label :subtitle, "Subtitle: "
+      = f.text_field :subtitle
+    .field
+      = f.label :image, "Home Image: "
+      = f.grouped_collection_select(:image_id, @categories, :images, :display_name, :id, :name, { :selected => (@home.image.id if @home.image)},{ :size => @images.length, :style => "height:210px;", "data-images-json" => @images_json})
+      = default_image_tag(@home.image, :id => :image_preview)
+    .field
+      = f.label :text, "Text: "
+      = f.text_area :text
+    .submit
+      = f.submit
+      = f.cancel

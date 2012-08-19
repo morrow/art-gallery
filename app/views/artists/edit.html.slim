@@ -1,0 +1,6 @@
+h1 
+  | Editing 
+  = link_to "Artists", "/artists", :class => "action artists"
+  = action_divider
+  = link_to @artist.name, edit_artist_path(@artist)
+= render "form"

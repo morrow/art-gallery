@@ -1,0 +1,14 @@
+#admin
+  = render :partial => "navigation"
+  h1 Edit Home 
+  = form_for @home do |f|
+    = f.label :title do
+      div Title: 
+      = f.text_field :title
+    = f.label :subtitle do
+      div Subtitle: 
+      = f.text_field :subtitle
+    = f.label :text do
+      div Text:
+      = f.text_area :text
+    = f.submit

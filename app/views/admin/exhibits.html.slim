@@ -1,0 +1,9 @@
+#admin.exhibits
+  .new_header
+    h1
+      | Editing 
+      .action.exhibits Exhibits
+    = new_button :exhibit
+  - @exhibits.each do |exhibit|
+    = link_to edit_exhibit_path exhibit do
+      = render exhibit, :edit => true

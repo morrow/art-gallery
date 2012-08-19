@@ -1,0 +1,36 @@
+#admin
+  .new_header
+    h1
+      | Editing 
+      .action.artists Artists
+    = new_button :artist
+  - @artists.each do |artist|
+    br
+    .artist
+      .image
+        - if artist.image and artist.image
+          = default_image_tag artist.image
+        - else
+          = default_image_tag
+      h3.name= link_to artist.name, artist, :style => "float:left;"
+      .actions(style="float:right")
+        = link_to "Edit Information", edit_artist_path(artist), :class => "button"
+        | &nbsp;
+        = link_to "Delete Artist", artist_path(artist), :method => "DELETE", :confirm => "Are you sure you want to permanently delete #{artist.name}?", :class => "button", :style => "color:red;"
+      br
+      br
+      .short_description
+        .label Short Description:
+        = max_length(artist.short_description, 90)
+      .biography
+        .label Biography:
+        = max_length(artist.biography, 90)
+      .website
+        .label Website:
+        = link_to artist.website, "http://#{artist.website}"
+      .phone
+        .label Phone:
+        = artist.phone
+      .media
+        .label Media: 
+        = artist.media

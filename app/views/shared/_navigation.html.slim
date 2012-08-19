@@ -1,0 +1,5 @@
+- navigation = {'home' => 'H', 'artists' => 'U', 'exhibits' => '\\', 'visit' => '@', 'contact' => 'M'}
+- navigation.each do |item, icon|
+  = link_to "/#{item}", :class => is_current_page(item) ? 'current' : nil do
+    span.pictos #{icon} 
+    = item.capitalize

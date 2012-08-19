@@ -1,0 +1,7 @@
+@font-face {
+	font-family: 'Baskerville';
+	src: local('☺'), url('open-baskerville.woff') format('woff'), url('open-baskerville.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+

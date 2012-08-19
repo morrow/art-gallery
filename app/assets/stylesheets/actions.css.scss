@@ -1,0 +1,62 @@
+$artists: #0EA4F8;
+$contact: #8F20E6;
+$exhibits: red;
+$home: #fe6a15;
+$visit: #04CE04;
+
+.action {
+
+  padding:5px 15px 2px 15px;
+  display:inline-block;
+  margin:0px 10px 20px 0px;
+  letter-spacing:2px;
+  text-align:center;
+
+  &.artists {
+    background:$artists;
+    color:white;
+  }
+  &.contact {
+    background:$contact;
+    color:white;
+  }
+  &.exhibits {
+    background:$exhibits;
+    color:white;
+  }
+  &.home {
+    background:$home;
+    color:white;
+  }
+  &.visit {
+    background:$visit;
+    color:white;
+  }
+  &.editing {
+    background:red;
+    color:white;
+  }
+  &.images {
+    background:orangered;
+    color:white;
+  }
+}
+
+
+#navigation a.current, #navigation a:hover {
+  &[href="/visit"] .pictos {
+    color:$visit;
+  }
+  &[href="/contact"] .pictos {
+    color:$contact;
+  }
+  &[href="/home"] .pictos {
+    color:$home;
+  }
+  &[href="/artists"] .pictos {
+    color:$artists;
+  }
+  &[href="/exhibits"] .pictos {
+    color:$exhibits;
+  }
+}

@@ -1,0 +1,9 @@
+#footer {
+  padding:.5em;
+  color:#777;
+  text-align:right;
+  > * div {
+    display:inline-block;
+    margin-left:2em;
+  }
+}

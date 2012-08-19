@@ -1,0 +1,24 @@
+- edit ||= false
+.exhibit
+  h1.name= exhibit.name
+  - if edit
+    .edit_button= link_to edit_exhibit_path(exhibit), :class => :button do
+      span.pictos y 
+      span Edit this exhibit
+  .image
+    = image_tag exhibit.image.image if exhibit.image
+  .artists
+    | Artists: &nbsp;
+    - exhibit.artists.each_with_index do |artist, x|
+      = link_to artist.name, artist
+      - if exhibit.artists.length > 1 
+        - if x < exhibit.artists.length - 2
+          |, 
+        - elsif x < exhibit.artists.length - 1
+          | &nbsp;and 
+        - else
+          |.
+  .dates 
+    .start Starting #{exhibit.start.strftime "%B %d, %Y"}
+    .end Ending #{exhibit.end.strftime "%B %d, %Y"}
+  .description= exhibit.description 

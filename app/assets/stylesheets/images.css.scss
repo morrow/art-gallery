@@ -1,0 +1,26 @@
+// Place all the styles related to the Images controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.images {
+  .image {
+    display:inline-block;
+    a {
+      height:200px;
+      width:250px;
+      background:#eee;
+      vertical-align:top;
+      text-align:center;
+      padding:1em;
+      margin:0.4em;
+      border:1px solid #ddd;
+      img {
+        max-height:85%;
+        max-width:100%;
+      }
+    }
+  }
+  .category {
+    margin-top:2em;
+  }
+}

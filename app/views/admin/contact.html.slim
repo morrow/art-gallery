@@ -1,0 +1,17 @@
+#admin
+  h1 
+    | Editing 
+    .action.contact Contact
+  = form_for @contact, :url => "/contact", :builder => FormHelper::FormBuilder do |f|
+    .field
+      = f.label :name, "Name: "
+      = f.text_field :name
+    .field
+      = f.label :phone, "Phone: "
+      = f.text_field :phone
+    .field
+      = f.label :email, "Email: "
+      = f.text_field :email  
+    .submit
+      = f.submit
+      = f.cancel

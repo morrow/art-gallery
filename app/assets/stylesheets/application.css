@@ -1,0 +1,9 @@
+/*
+ *
+ *= require reset.css
+ *= require shared.css
+ *= require_tree .
+*/
+@import "/fonts/pt_sans/stylesheet.css";
+@import "/fonts/pictos/stylesheet.css";
+@import "/fonts/baskerville/stylesheet.css";

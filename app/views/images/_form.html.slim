@@ -1,0 +1,17 @@
+= form_for @image, :builder => FormHelper::FormBuilder do |f|
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :category_id
+    = f.collection_select(:category_id, @categories, :id, :name, {:include_blank => true})
+  - if @image and @image.image and @image.image.to_s != '/images/original/missing.png'
+    .field
+      = f.label "Current Image: "
+      = image_tag @image.image
+  .field
+    = f.label :image, "New image: "
+    = f.file_field :image, :onchange => "if(document.getElementById('image_name').value == ''){var extension = '.' + this.files[0].name.split('.')[this.files[0].name.split('.').length-1]; document.getElementById('image_name').value = this.files[0].name.replace(extension, '').replace(/_|-/g, ' ');}"
+  .submit
+    = f.submit
+    = f.cancel
