@@ -17,6 +17,11 @@ module ApplicationHelper
     request.host.match /^admin\./
   end
 
+  def site_home
+    host = request.host.split('.')
+    host[1..-1].join('.')
+  end
+
   def cms_get(key)
     key = key.to_s
     begin
