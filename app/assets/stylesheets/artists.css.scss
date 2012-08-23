@@ -21,9 +21,9 @@
 
 #artists {
   .artist {
-    margin:2.5em 0em;
+    margin:3em 0em;
     &:first-child {
-      margin-top:0px;
+      margin:0em;
     }
     .image, .name, .website {
       display:inline-block;

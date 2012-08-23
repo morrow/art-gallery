@@ -12,7 +12,7 @@
       | Manage Images
   .field
     = f.label :artist, "Artists: "
-    = f.collection_select(:artists, @artists, :id, :name, { :selected => @exhibit.artists.collect!{|x| x.id}},{ :multiple => true, :size => @artists.length + 1})
+    = f.collection_select(:artists, @artists, :id, :name, { :selected => @exhibit.artists.collect{|x| x.id}},{ :multiple => true, :size => @artists.length + 1})
     span
       | Hold 
       b ctrl 

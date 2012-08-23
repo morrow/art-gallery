@@ -6,7 +6,7 @@ $hover_color: #09f;
   margin-top:2em;
   text-align:center;
   width:961px;
-  height:50px;
+  height:51px;
   a {
     -webkit-transition: all .1s linear;
     letter-spacing: 1px;
@@ -20,7 +20,7 @@ $hover_color: #09f;
       color:#bbb;
     }
     &:hover {
-      background:   #d9d9d9;
+      background:   #d5d5d5;
       color:        #222;
       .pictos {
         color:#888;

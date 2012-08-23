@@ -1,5 +1,3 @@
 #exhibits
   h1.action.exhibits Exhibits
-  - @exhibits.each do |exhibit|
-    = link_to exhibit do
-      = render exhibit
+  = render @exhibits

@@ -1,6 +1,8 @@
 class AdminController < ApplicationController
   
   before_filter :authenticate_user
+  before_filter :get_images, :only => [:visit]
+  before_filter :get_categories, :only => [:visit]
 
   # GET /admin
   # GET /admin.json

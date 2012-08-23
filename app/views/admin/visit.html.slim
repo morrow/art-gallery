@@ -12,6 +12,14 @@
     .field
       = f.label :hours, "Hours: "
       = f.text_field :hours
+    .image
+      = f.label :image, "Image: "
+      = f.grouped_collection_select(:images, @categories, :images, :display_name, :id, :name, { :selected => (@visit.images.collect{|x| x.id} if @visit.images)},{ :multiple => :true, :size => @images.length, :style => "height:210px;", "data-images-json" => @images_json})
+      = default_image_tag(@visit.images.first, :id => :image_preview)
+      br
+      = link_to  images_path, :class => "new image" do
+        span.pictos y 
+        | Manage Images
     .submit
       = f.submit
       = f.cancel

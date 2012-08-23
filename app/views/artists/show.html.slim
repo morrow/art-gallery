@@ -6,4 +6,6 @@ h1
     = @artist.name
 - if is_admin
   = link_to "Edit #{@artist.name}'s information", edit_artist_path(@artist), :class => "edit button"
+  br
+  br
 = render @artist

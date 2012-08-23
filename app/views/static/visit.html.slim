@@ -4,12 +4,7 @@
     .action.visit Visit 
     | the Gallery
   .images
-    .image
-      img(src="/assets/lat1.jpg")
-    .image
-      img(src="/assets/la1.jpg")
-    .image
-      img(src="/assets/RAGS1.jpg")
+    = render @visit.images
   br
   .address
     | The gallery is located at: 

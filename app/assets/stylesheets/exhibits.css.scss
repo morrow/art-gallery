@@ -1,11 +1,19 @@
-.exhibits {
+#exhibits {
   .exhibit {
+    height:10em;
+    margin:1em 0em;
+    .image, .name {
+      display:inline-block;
+      vertical-align:middle;
+    }
     .image {
+      margin:0em 0.5em 0.5em 0em;
+      height:10em;
+      width:7em;
       float:left;
-      margin:0em .5em 0em 0em;
-      height:40px;
       img {
-        height:40px;
+        max-height:100%;
+        max-width:100%;
       }
     }
   }
@@ -26,7 +34,7 @@
   }
 }
 
-#admin.exhibits {
+#admin #exhibits {
   .exhibit {
     background:#eee;
     padding:.5em 1em;

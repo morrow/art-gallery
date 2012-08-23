@@ -89,13 +89,4 @@ class ArtistsController < ApplicationController
       @artist = Artist.find(params[:id])
     end
 
-    def get_images
-      @images = Image.all.sort_by(&:name)
-      json = {}
-      @images.each do |image|
-        json[image.id] = image.image.to_s
-      end
-      @images_json = json.to_json
-    end
-
 end
