@@ -14,7 +14,7 @@ module ApplicationHelper
   end
 
   def is_admin
-    request.host == "admin.restonartgallery.dev"
+    request.host.match /^admin\./
   end
 
   def cms_get(key)
