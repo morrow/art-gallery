@@ -19,6 +19,8 @@ gem 'rails-console-tweaks'
 
 gem 'paperclip'
 
+gem 'therubyracer'
+
 group :console do
   gem 'wirb'
   gem 'hirb'
