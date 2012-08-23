@@ -14,8 +14,6 @@ module ApplicationHelper
   end
 
   def is_admin
-    puts request.host
-    puts request.host.match /^admin\./
     request.host.match /^admin\./
   end
 
