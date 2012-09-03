@@ -4,7 +4,7 @@ module ApplicationHelper
     page = page.to_s
     a = controller.controller_name
     b = page
-    if a == 'static'
+    if a == 'static' and %w(contact visit).include? b
       current_page?(:controller => 'static', :action => b)
     elsif a == 'admin'
       current_page?(:controller => 'admin', :action => b)

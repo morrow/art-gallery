@@ -2,7 +2,7 @@
   h1 
     | Editing 
     .action.visit Visit 
-  = form_for @visit, :url => "/admin/visit", :builder => FormHelper::FormBuilder do |f|
+  = form_for @visit, :url => "/visit", :builder => FormHelper::FormBuilder do |f|
     .field
       = f.label :address, "Address: "
       = f.text_field :address
@@ -13,9 +13,10 @@
       = f.label :hours, "Hours: "
       = f.text_field :hours
     .image
-      = f.label :image, "Image: "
-      = f.grouped_collection_select(:images, @categories, :images, :display_name, :id, :name, { :selected => (@visit.images.collect{|x| x.id} if @visit.images)},{ :multiple => :true, :size => @images.length, :style => "height:210px;", "data-images-json" => @images_json})
-      = default_image_tag(@visit.images.first, :id => :image_preview)
+      div(style="height:250px")
+        = f.label :image, "Image: "
+        = f.grouped_collection_select(:image_id, @categories, :images, :display_name, :id, :name, { :selected => (@visit.image if @visit.image)},{ :size => @images.length, :style => "height:210px;", "data-images-json" => @images_json})
+        = default_image_tag((@visit.image if @visit.image), :id => :image_preview)
       br
       = link_to  images_path, :class => "new image" do
         span.pictos y 

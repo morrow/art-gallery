@@ -4,8 +4,7 @@
     .action.visit Visit 
     | the Gallery
   .images
-    = render @visit.images
-  br
+    = image_tag @visit.image.image
   .address
     | The gallery is located at: 
     b= @visit.address

@@ -1,7 +1,7 @@
 class Visit < ActiveRecord::Base
 
-  attr_accessible :days, :hours, :address
+  attr_accessible :days, :hours, :address, :image_id
 
-  has_and_belongs_to_many :images
+  belongs_to :image
 
 end
