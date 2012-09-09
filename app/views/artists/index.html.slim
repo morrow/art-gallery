@@ -1,5 +1,7 @@
 #artists
   h1.action.artists Artists 
+  #search_wrap
+    input#search.artist(type="search" placeholder="search artists")
   - @artists.sort_by(&:last_name).each do |artist|
     .artist
       .image

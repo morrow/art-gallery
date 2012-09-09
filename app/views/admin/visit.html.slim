@@ -12,6 +12,15 @@
     .field
       = f.label :hours, "Hours: "
       = f.text_field :hours
+    .description
+      = f.label :description , "Description: "
+      = f.text_area :description
+    .directions_link
+      = f.label :directions_link, "Directions URL: "
+      = f.text_field :directions_link, :style => "width:700px"
+    .directions_text
+      = f.label :directions_text, "Directions Text: "
+      = f.text_area :directions_text
     .image
       div(style="height:250px")
         = f.label :image, "Image: "
