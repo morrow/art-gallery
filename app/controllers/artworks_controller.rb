@@ -1,5 +1,5 @@
 class ArtworksController < ApplicationController
-  
+
   before_filter :find_artwork, :only => [:show, :edit, :update, :destroy]
   before_filter :authenticate_user, :except => [:show, :index]
 
@@ -42,7 +42,7 @@ class ArtworksController < ApplicationController
   # POST /artworks
   # POST /artworks.json
   def create
-    @artwork = Artwork.new(params[:artwork])
+    @artwork = Artwork.new(artwork_params)
 
     respond_to do |format|
       if @artwork.save
@@ -60,7 +60,7 @@ class ArtworksController < ApplicationController
   # PUT /artworks/1.json
   def update
     respond_to do |format|
-      if @artwork.update_attributes(params[:artwork])
+      if @artwork.update_attributes(artwork_params)
         flash[:notice] = 'Artwork was successfully updated.'
         format.html { redirect_to(@artwork) }
         format.json  { head :ok }
@@ -85,6 +85,9 @@ class ArtworksController < ApplicationController
   private
     def find_artwork
       @artwork = Artwork.find(params[:id])
+    end
+    def artwork_params
+      params.require(:artwork).permit(:name)
     end
 
 end

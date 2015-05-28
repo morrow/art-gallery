@@ -1,5 +1,5 @@
 class Contact < ActiveRecord::Base
 
-  attr_accessible :name, :phone, :email
+  #attr_accessible :name, :phone, :email
 
 end

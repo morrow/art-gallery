@@ -2,6 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-$('#exhibit_image_id').live 'change', (e)->
+$('#exhibit_image_id').on 'change', (e)->
   images = $('[data-images-json]').data('images-json')
   $('#image_preview').attr('src', images[@value])

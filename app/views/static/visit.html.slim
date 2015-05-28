@@ -1,14 +1,14 @@
 #visit
-  h1
-    .action.visit Visit 
+  h1.title
+    .action.visit Visit
     | the Gallery
   .image
     = image_tag @visit.image.image
   .address
-    | The gallery is located at 
+    | The gallery is located at
     b= @visit.address
   .hours
-    | And is open  
+    | And is open
     b #{@visit.days}, #{@visit.hours}
   - if @visit.description
     .description= @visit.description

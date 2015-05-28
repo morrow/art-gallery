@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  
+
   # get song from database for applicable methods event
   before_filter :find_event, :only => [:show, :edit, :update, :destroy]
   # authenticate using devise (optional)
@@ -43,7 +43,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(params[:event])
+    @event = Event.new(event_params)
 
     respond_to do |format|
       if @event.save
@@ -61,7 +61,7 @@ class EventsController < ApplicationController
   # PUT /events/1.json
   def update
     respond_to do |format|
-      if @event.update_attributes(params[:event])
+      if @event.update_attributes(event_params)
         flash[:notice] = 'Event was successfully updated.'
         format.html { redirect_to(@event) }
         format.json  { head :ok }
@@ -86,6 +86,9 @@ class EventsController < ApplicationController
   private
     def find_event
       @event = Event.find(params[:id])
+    end
+    def event_params
+      params.require(:event).permit(:name)
     end
 
 end

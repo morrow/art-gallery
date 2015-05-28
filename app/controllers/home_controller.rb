@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  
+
   def index
     @home = Home.first
     respond_to do |format|
@@ -30,7 +30,7 @@ class HomeController < ApplicationController
   end
 
   def create
-    @home = Home.new(params[:home])
+    @home = Home.new(home_params)
     respond_to do |format|
       if @home.save
         flash[:notice] = 'Home was successfully created.'
@@ -45,7 +45,7 @@ class HomeController < ApplicationController
 
   def update
     respond_to do |format|
-      if @home.update_attributes(params[:home])
+      if @home.update_attributes(home_params)
         flash[:notice] = 'Home was successfully updated.'
         format.html { redirect_to("/admin") }
         format.json  { head :ok }
@@ -62,6 +62,11 @@ class HomeController < ApplicationController
       format.html { redirect_to(home_url) }
       format.json  { head :ok }
     end
+  end
+
+  private
+  def home_params
+    params.require(:home).permit(:title, :subtitle, :text, :image_id)
   end
 
 end

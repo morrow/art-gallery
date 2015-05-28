@@ -4,10 +4,10 @@ class Artist < ActiveRecord::Base
 
   has_many :exhibits
 
-  attr_accessible :name, :image, :image_id, :biography, :website, :email, :facebook, :twitter, :phone, :media, :short_description
+  #attr_accessible :name, :image, :image_id, :biography, :website, :email, :facebook, :twitter, :phone, :media, :short_description
 
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: [:slugged, :finders]
 
   def first_name
     return self.name.split(' ').first

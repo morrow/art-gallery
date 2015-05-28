@@ -1,11 +1,11 @@
 #artists
-  h1.action.artists Artists 
+  h1.title.action.artists Artists
   #search_wrap
     input#search.artist(type="search" placeholder="search artists")
   - @artists.sort_by(&:last_name).each do |artist|
     .artist
       .image
-        = link_to artist do 
+        = link_to artist do
           = image_tag artist.image.image
       .name= link_to artist.name, artist
       - if artist.media and artist.media != ''
@@ -13,7 +13,7 @@
       - if artist.website != ''
         .website
           = link_to "http://#{artist.website}", :target => "_blank", :title => "Open #{artist.website} in a new window." do
-            span= artist.website 
+            span= artist.website
       - if artist.short_description
         .short_description.text
           == artist.short_description.gsub(/\n/, '<br />')

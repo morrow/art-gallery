@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  
+
   before_filter :authenticate_user
   before_filter :get_images, :only => [:visit]
   before_filter :get_categories, :only => [:visit]
@@ -27,7 +27,7 @@ class AdminController < ApplicationController
 
   def contact
     @contact = Contact.first
-    if params["_method"] == "put" and @contact.update_attributes(params[:contact])
+    if params["_method"] == "put" and @contact.update_attributes(contact_params)
       respond_to do |format|
         flash[:notice] = 'Contact was successfully updated.'
         format.html { redirect_to("/") }
@@ -37,7 +37,7 @@ class AdminController < ApplicationController
 
   def visit
     @visit = Visit.first
-    if params["_method"] == "put" and @visit.update_attributes(params[:visit])
+    if params["_method"] == "put" and @visit.update_attributes(visit_params)
       respond_to do |format|
         flash[:notice] = 'Visit was successfully updated.'
         format.html { redirect_to("/") }
@@ -54,7 +54,7 @@ class AdminController < ApplicationController
     end
     @images_json = json.to_json
     @home = Home.first
-    if params["_method"] == "put" and @home.update_attributes(params[:home])
+    if params["_method"] == "put" and @home.update_attributes(home_params)
       respond_to do |format|
         flash[:notice] = 'Home was successfully updated.'
         format.html { redirect_to("/") }
@@ -63,6 +63,17 @@ class AdminController < ApplicationController
   end
 
   def help
+  end
+
+  private
+  def visit_params
+    params.require(:visit).permit(:days, :hours, :address, :image_id, :description, :directions_link, :directions_text)
+  end
+  def home_params
+    params.require(:home).permit(:title, :subtitle, :text, :image_id)
+  end
+  def contact_params
+    params.require(:contact).permit(:name, :phone, :email)
   end
 
 end

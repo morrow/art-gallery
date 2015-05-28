@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  
+
   before_filter :find_image, :only => [:show, :edit, :update, :destroy]
   before_filter :find_categories, :only => [:edit, :new]
   before_filter :authenticate_user, :except => [:show, :index]
@@ -42,7 +42,7 @@ class ImagesController < ApplicationController
   # POST /images
   # POST /images.json
   def create
-    @image = Image.new(params[:image])
+    @image = Image.new(image_params)
     respond_to do |format|
       if @image.save
         flash[:notice] = 'Image was successfully created.'
@@ -59,7 +59,7 @@ class ImagesController < ApplicationController
   # PUT /images/1.json
   def update
     respond_to do |format|
-      if @image.update_attributes(params[:image])
+      if @image.update_attributes(image_params)
         flash[:notice] = 'Image was successfully updated.'
         format.html { redirect_to(@image) }
         format.json  { head :ok }
@@ -88,6 +88,9 @@ class ImagesController < ApplicationController
 
     def find_categories
       @categories = Category.all
+    end
+    def image_params
+      params.require(:image).permit(:name, :image, :category_id)
     end
 
 end

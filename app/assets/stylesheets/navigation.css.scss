@@ -4,23 +4,24 @@ $hover_color: #09f;
 
 #navigation {
   margin-top:2em;
-  text-align:center;
+  text-align:left;
   width:961px;
   height:51px;
   a {
+    margin-left: 1.5em;
     -webkit-transition: all .1s linear;
     letter-spacing: 1px;
     border:         1px solid transparent;
-    font-family:    "PTSansBold";
+    font-family:    "bebas";
     text-align:     center;
-    font-size:      18px;
-    padding:        .7em 3em;
+    font-size:      1.4em;
+    padding:        .73em 1.5em;
     color:          #666;
     .pictos {
       color:#bbb;
     }
     &:hover {
-      background:   #d5d5d5;
+      background:   #fff;
       color:        #222;
       .pictos {
         color:#888;

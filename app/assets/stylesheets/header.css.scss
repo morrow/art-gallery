@@ -10,6 +10,7 @@
   #logo {
     img {
       float:left;
+      width:39px;
       height:115px;
       margin-right:1em;
       margin-top:-10px;
@@ -27,6 +28,7 @@
       &:hover {
        color:#555;
       }
+      display:inline-block;
       letter-spacing: 1px;
       margin-left:    0.5em;
       font-weight:    bold;
@@ -46,6 +48,9 @@
       display:inline-block;
       &:hover {
         opacity:10;
+      }
+      &:first-child {
+        border-bottom:2px solid #ddd;
       }
     }
   }

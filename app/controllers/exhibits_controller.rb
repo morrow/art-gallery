@@ -1,5 +1,5 @@
 class ExhibitsController < ApplicationController
-  
+
   # get song from database for applicable methods exhibit
   before_filter :find_exhibit, :only => [:show, :edit, :update, :destroy]
   # authenticate using devise (optional)
@@ -100,6 +100,9 @@ class ExhibitsController < ApplicationController
   private
     def find_exhibit
       @exhibit = Exhibit.find(params[:id])
+    end
+    def exhibit_params
+      params.require(:exhibit).permit(:name, :artists, :description, :start, :end, :hours, :image_id)
     end
 
 end

@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  
+
   before_filter :find_artist, :only => [:show, :edit, :update, :destroy]
   before_filter :authenticate_user, :except => [:show, :index]
   before_filter :get_images, :only => [:edit, :new]
@@ -87,6 +87,9 @@ class ArtistsController < ApplicationController
   private
     def find_artist
       @artist = Artist.find(params[:id])
+    end
+    def artist_params
+      params.require(:artist).permit(:name, :image, :image_id, :biography, :website, :email, :facebook, :twitter, :phone, :media, :short_description)
     end
 
 end

@@ -1,6 +1,6 @@
 class Exhibit < ActiveRecord::Base
 
-  attr_accessible :name, :artists, :description, :start, :end, :hours, :image_id
+  #attr_accessible :name, :artists, :description, :start, :end, :hours, :image_id
 
   has_and_belongs_to_many :artists
 
@@ -9,7 +9,7 @@ class Exhibit < ActiveRecord::Base
   before_save :set_year
 
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: [:slugged, :finders]
 
   def set_year
     self.year = Time.now.strftime "%Y"

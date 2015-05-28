@@ -1,10 +1,9 @@
-DOCTYPE html
+doctype html
 html
   head
     title Reston Art Gallery
-    = stylesheet_link_tag    "application", :media => "all" 
-    = javascript_include_tag "application" 
-    = csrf_meta_tags 
+    = stylesheet_link_tag    "application", :media => "all", "data-turbolinks-track" => "true"
+    = csrf_meta_tags
   body
     #wrap
       - if is_admin
@@ -15,5 +14,6 @@ html
         #notice= flash[:notice]
       - if flash[:error]
         #error= flash[:error]
-      #main= yield 
+      #main= yield
       #footer= render "shared/footer"
+    = javascript_include_tag "application", "data-turbolinks-track" => "true"

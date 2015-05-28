@@ -1,24 +1,8 @@
 #logo
   = link_to  "http://restonartgallery.dev", :id => "logo" do
-    - if false
-      img(src="/assets/art_statue_icon.png")
-      .reston
-        span R
-        span eston
-      .art
-        span A
-        span rt
-      .gallery
-        span G
-        span allery
-        span(style="color:#999;")&nbsp;& 
-      .studios 
-        span S
-        span tudios
-    - else
-      img(src="/assets/art_statue_icon.png")
-      div Reston Art Gallery
-      div and Studios
+    img(src="/assets/art_statue_icon.png")
+    div Reston Art Gallery
+    div and Studios
 #info
   = link_to "/visit" do
     .address= cms_get("visit/address")
