@@ -9,46 +9,64 @@ h1.title {
   display:inline-block;
   font-size:2.5em;
   font-weight:normal;
+  letter-spacing:1px;
 }
 
 .action {
-  padding:0.1em 0.2em;
-  margin:0px 10px 20px 0px;
+  margin-bottom:0.5em;
+  padding:0.1em 0.3em;
   display:inline-block;
   letter-spacing:0.1em;
   text-align:center;
-  font-weight:bold;
+  font-weight:bold !important;
+  border-bottom:0.1em solid transparent;
 
   &.artists {
-    background:$artists;
-    color:white;
+    border-color:$artists;
   }
   &.contact {
-    background:$contact;
-    color:white;
+    border-color:$contact;
   }
   &.exhibits {
-    background:$exhibits;
-    color:white;
+    border-color:$exhibits;
   }
   &.home {
-    background:$home;
-    color:white;
+    border-color:$home;
   }
   &.visit {
-    background:$visit;
-    color:white;
+    border-color:$visit;
   }
   &.editing {
-    background:red;
-    color:white;
+    border-color:red;
   }
   &.images {
-    background:orangered;
-    color:white;
+    border-color:orangered;
   }
 }
 
+// #navigation a.current {
+//   &[href='/artists'] {
+//     color:$artists;
+//   }
+//   &[href='/contact'] {
+//     color:$contact;
+//   }
+//   &[href='/exhibits'] {
+//     color:$exhibits;
+//   }
+//   &[href='/home'] {
+//     color:$home;
+//   }
+//   &[href='/visit'] {
+//     color:$visit;
+//   }
+//   &[href='/editing'] {
+//     color:red;
+//   }
+//   &[href='/images'] {
+//     color:orangered;
+//   }
+// }
 
 #navigation a.current, #navigation a:hover {
   &[href="/visit"] .pictos {

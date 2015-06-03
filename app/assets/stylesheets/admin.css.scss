@@ -1,5 +1,14 @@
 form {
 
+  optgroup {
+    background:#333;
+    color:white;
+    option {
+      color:black;
+      background:#eee;
+    }
+  }
+
   label {
     display:inline-block;
     min-width:120px;

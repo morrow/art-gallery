@@ -4,7 +4,9 @@ $hover_color: #09f;
 
 body {
   font-family: "PTSansRegular", "Helvetica Neue", Helvetica, Arial;
-  background:   #e8e8e8;
+  //background:   url(/assets/background.jpg) no-repeat fixed;
+  //background-size:cover;
+  background:#eee;
   font-size:    16px;
 }
 
@@ -59,12 +61,13 @@ ol.hl, ul.hl {
 #wrap {
   margin:30px auto;
   margin-bottom:50px;
-  width:960px;
+  width:900px;
 }
 
 #main {
   background:#fff;
   padding:2em;
+  border:6px outside rgba(0,0,0,0.2);
 }
 
 #notice, #error {
@@ -130,10 +133,6 @@ table {
   font-size:18px;
   line-height:27px;
   color:#333;
-}
-
-a:hover {
-  opacity:.8;
 }
 
 .action_divider {

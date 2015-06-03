@@ -3,6 +3,7 @@ class ArtistsController < ApplicationController
   before_filter :find_artist, :only => [:show, :edit, :update, :destroy]
   before_filter :authenticate_user, :except => [:show, :index]
   before_filter :get_images, :only => [:edit, :new]
+  before_filter :get_categories, :only => [:edit, :new]
 
   # GET /artists
   # GET /artists.json

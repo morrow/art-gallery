@@ -1,8 +1,9 @@
 #home
   - if @home.title
-    h1= @home.title
+    h1.home.action= @home.title
+  - if @home.image
+    = image_tag @home.image.image, :id => "home_image"
   - if @home.subtitle
     h2= @home.subtitle
-    = image_tag @home.image.image, :id => "home_image"
   - if @home.text
     p.text== process_text @home.text

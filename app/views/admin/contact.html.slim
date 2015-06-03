@@ -1,6 +1,6 @@
 #admin
-  h1 
-    | Editing 
+  h1
+    | Editing
     .action.contact Contact
   = form_for @contact, :url => "/contact", :builder => FormHelper::FormBuilder do |f|
     .field
@@ -11,7 +11,19 @@
       = f.text_field :phone
     .field
       = f.label :email, "Email: "
-      = f.text_field :email  
-    .submit
+      = f.text_field :email
+    .field
+      = f.label :email, "Facebook: "
+      = f.text_field :facebook  
+    .field
+      = f.label :email, "Twitter: "
+      = f.text_field :twitter
+    .field
+      = f.label :email, "Flickr: "
+      = f.text_field :flickr
+    .field
+      = f.label :email, "Instagram: "
+      = f.text_field :instagram
+        .submit
       = f.submit
       = f.cancel

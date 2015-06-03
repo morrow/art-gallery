@@ -14,6 +14,7 @@ html
         #notice= flash[:notice]
       - if flash[:error]
         #error= flash[:error]
-      #main= yield
+      #main class=current_page
+        = yield
       #footer= render "shared/footer"
     = javascript_include_tag "application", "data-turbolinks-track" => "true"

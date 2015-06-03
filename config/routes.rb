@@ -1,23 +1,21 @@
 Rails.application.routes.draw do
+
   # admin
-  namespace :admin do
-    constraints :subdomain => "admin" do
-      scope :module => "admin", :as => "admin" do
-        get :home
-        put :home
-        get :help
-        get :artists
-        get :exhibits
-        get :contact
-        put :contact
-        get :visit
-        put :visit
-      end
-      resources :artists
-      resources :exhibits
-      resources :images
-      root :to => "admin#index"
-    end
+  constraints subdomain: 'admin' do
+    get :visit, :controller => :admin
+    patch :visit, :controller => :admin
+    get :contact, :controller => :admin
+    patch :contact, :controller => :admin
+    get :home, :controller => :admin
+    patch :home, :controller => :admin
+    get :artists, :controller => :admin
+    patch :artists, :controller => :admin
+    get :exhibits, :controller => :admin
+    patch :exhibits, :controller => :admin
+    resources :artists
+    resources :exhibits
+    resources :images, :controller => 'images'
+    root :to => "admin#home", :as => 'admin_root'
   end
 
   # resources
@@ -28,10 +26,12 @@ Rails.application.routes.draw do
   root :to => "home#index"
   get "/home" => "home#index"
 
+  # static
   %w(contact visit).each do |action|
     get "/#{action}" => "static##{action}"
   end
 
-  # Error
+  # errors
   get '*a', :to => 'errors#routing'
+
 end

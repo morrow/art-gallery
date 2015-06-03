@@ -1,12 +1,25 @@
 #logo
-  = link_to  "http://restonartgallery.dev", :id => "logo" do
-    img(src="/assets/art_statue_icon.png")
-    div Reston Art Gallery
-    div and Studios
+  img(src="/assets/art_statue_icon.png")
+#title
+  = link_to  "/home" do
+    div Reston Art Gallery and Studios
 #info
-  = link_to "/visit" do
+  = link_to "/visit#directions" do
     .address= cms_get("visit/address")
-    .hours Open #{cms_get("visit/days")} #{cms_get("visit/hours")}
-  = link_to "/contact" do
-    .email= cms_get("contact/email")
-    .phone= cms_get("contact/phone")
+  = link_to "/visit" do
+    .hours
+      .open Open
+      | #{cms_get("visit/days")} #{cms_get("visit/hours")}
+  - if false
+    = link_to "/contact" do
+      .email= cms_get("contact/email")
+      .phone= cms_get("contact/phone")
+.social
+  - if cms_get('contact/facebook')
+  = link_to cms_get('contact/facebook'), :target => :blank do
+    | Like us on
+    .facebook Facebook
+  - if cms_get('contact/twitter') != ''
+    = link_to cms_get('contact/twitter'), :target => :blank do
+      | Follow us on
+      .twitter Twitter

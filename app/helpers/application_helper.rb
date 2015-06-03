@@ -4,13 +4,22 @@ module ApplicationHelper
     page = page.to_s
     a = controller.controller_name
     b = page
-    if a == 'static' and %w(contact visit).include? b
-      current_page?(:controller => 'static', :action => b)
-    elsif a == 'admin'
-      current_page?(:controller => 'admin', :action => b)
-    elsif a.match b and a.length == b.length
-      true
+    begin
+      if a == 'static' and %w(contact visit).include? b
+        current_page?(:controller => 'static', :action => b)
+      elsif a == 'admin'
+        current_page?(:controller => 'admin', :action => b)
+      elsif a.match b and a.length == b.length
+        true
+      end
+    rescue
+      false
     end
+  end
+
+  def current_page
+    return controller.controller_name unless controller.controller_name.match /admin|static/
+    return controller.action_name
   end
 
   def is_admin
@@ -18,8 +27,7 @@ module ApplicationHelper
   end
 
   def site_home
-    host = request.host.split('.')
-    host[1..-1].join('.')
+    host = request.url.sub(/admin\./, '')
   end
 
   def cms_get(key)

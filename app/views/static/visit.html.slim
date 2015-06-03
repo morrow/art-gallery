@@ -5,15 +5,15 @@
   .image
     = image_tag @visit.image.image
   .address
-    | The gallery is located at
+    | The gallery is located at&nbsp;
     b= @visit.address
   .hours
-    | And is open
+    | And is open&nbsp;
     b #{@visit.days}, #{@visit.hours}
-  - if @visit.description
+  - if @visit.description != ''
     .description= @visit.description
   br
-  h2 Directions
+  h2#directions Directions
   .directions
     - if @visit.directions_text
       p= @visit.directions_text

@@ -5,30 +5,35 @@ $hover_color: #09f;
 #navigation {
   margin-top:2em;
   text-align:left;
-  width:961px;
+  width:901px;
   height:51px;
+  overflow:hidden;
+  background:#eee;
   a {
-    margin-left: 1.5em;
+    margin-left: 0.55em;
     -webkit-transition: all .1s linear;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     border:         1px solid transparent;
     font-family:    "bebas";
     text-align:     center;
-    font-size:      1.4em;
-    padding:        .73em 1.5em;
-    color:          #666;
+    font-size:      1.5em;
+    padding:        .55em 1.4em;
+    color:          #444;
     .pictos {
-      color:#bbb;
+      color:#aaa;
+    }
+    &:first-child {
+      margin-left:0;
     }
     &:hover {
-      background:   #fff;
+      background:   #ddd;
       color:        #222;
       .pictos {
         color:#888;
       }
     }
     &.current {
-      background:   white;
+      background:   #fff;
       color:        black;
       .pictos {
         color: #333;
